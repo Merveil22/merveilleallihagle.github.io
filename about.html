@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio AM</title>
+</head>
+<body>
+    <header>
+        <div class="principal">
+            <div class="header-left">
+                <div class="logo">AM</div>
+                <div class="infos">
+                    <h3>Alliha Gle Merveille</h3>
+                    <span class="pseudo">🥷 GђσѕтЅтσям 👻</span>
+                </div>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="about.html" class="btn-nav">About</a></li>
+                    <li><a href="skills.html" class="btn-nav">Skills</a></li>
+                    <li><a href="projects.html" class="btn-nav">Projects</a></li>
+                    <li><a href="blog.html" class="btn-nav">Blog</a></li>
+                    <li><a href="contact.html" class="btn-nav">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="statuts">
+                <span class="status-dot"></span> Online
+            </div>
+        </div>
+    </header>
+   <section id="about" class="about-section">
+    <div class="about-content">
+        <h2 class="section-title"><span class="cmd-icon">>_</span> Profile.info</h2>
+
+        <div class="about-hero">
+            <div class="about-card card-main">
+                <h3>Présentation</h3>
+                <div class="info-line"><h4>Nom : </h4><p>ALLIHA GLE</p></div>
+                <div class="info-line"><h4>Prénom : </h4><p>Bidossessi Merveille</p></div>
+                <div class="info-line"><h4>Alias : </h4><p>🥷 GђσѕтЅтσям 👻</p></div>
+                <div class="info-line"><h4>Date & Lieu : </h4><p>22 Juillet 2006 à Natitingou</p></div>
+                <div class="info-line"><h4>Statut : </h4><p>Étudiant en 2ème Année de Sécurité des Systèmes Informatiques à <span>HECM-PARAKOU</span></p></div>
+            </div>
+
+            <div class="profil">
+                <div class="photo-glow"></div>
+                <img src="profil.jpeg" alt="Alliha">
+            </div>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>Passions</h3>
+                <p>Étudiant passionné en 2ème année de Sécurité des Systèmes Informatiques à l'HECM-PARAKOU, 
+                    je me spécialise dans l'analyse des menaces et le hacking éthique...</p>
+            </div>
+
+            <div class="about-card">
+                <h3>Objectifs</h3>
+                <p>Mon but est de devenir un pilier de la cyber-défense. Je m'entraîne quotidiennement à identifier les vulnérabilités pour aider 
+                    les organisations à anticiper les cyberattaques.</p>
+            </div>
+        </div>
+
+        <div class="values-container">
+            <h3>Vision & Philosophie</h3>
+            <p class="vision-text">"La sécurité n'est pas un état, c'est un mouvement perpétuel."</p>
+            <div class="values-list">
+                <div class="value-item"><span class="icon">🛡️</span><h4>Sécurité</h4><p>La protection des données est un droit fondamental.</p></div>
+                <div class="value-item"><span class="icon">⚖️</span><h4>Éthique</h4><p>Hacking constructif et protecteur.</p></div>
+                <div class="value-item"><span class="icon">🚀</span><h4>Innovation</h4><p>Une longueur d'avance sur les attaques.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p class="footer-terminal"><span class="cmd-icon">>_</span> system.status: <span class="accent-green">secured</span></p>
+                <p class="copyright">&copy; 2026 AM | Designed for the Digital Light</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/ton-profil" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://github.com/ton-github" target="_blank" class="social-link">GitHub</a>
+                <a href="mailto:bidossessimerveille@gmail.com" class="social-link">Email</a>
+            </div>
+
+            <div class="footer-quote">
+                <p>"La sécurité est un processus, pas un produit."</p>
+            </div>
+        </div>
+        <div class="footer-bottom-line"></div>
+    </footer>
+
+    <script>
+        const menu = document.querySelector('#mobile-menu');
+        const nav = document.querySelector('#nav-menu');
+
+        menu.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio AM</title>
+</head>
+<body>
+    <header>
+        <div class="principal">
+            <div class="header-left">
+                <div class="logo">AM</div>
+                <div class="infos">
+                    <h3>Alliha Gle Merveille</h3>
+                    <span class="pseudo">🥷 GђσѕтЅтσям 👻</span>
+                </div>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="about.html" class="btn-nav">About</a></li>
+                    <li><a href="skills.html" class="btn-nav">Skills</a></li>
+                    <li><a href="projects.html" class="btn-nav">Projects</a></li>
+                    <li><a href="blog.html" class="btn-nav">Blog</a></li>
+                    <li><a href="contact.html" class="btn-nav">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="statuts">
+                <span class="status-dot"></span> Online
+            </div>
+        </div>
+    </header>
+    <h1 class="prenom">Merveille</h1>
+    <h2 class="nom">Alliha Gle</h2>
+
+    <p class="ecole">
+        <span class="highlight">HECM-PARAKOU</span> -- Sécurité des Systèmes Informatiques | 2ème Année
+    </p>
+
+    <div class="special">
+        <span class="cmd-icon">>_</span> Ethical Hacker & CyberAnalyst
+    </div>
+
+    <div class="hero-container">
+        <div class="paragraph">
+            <h3>Comprendre l’ombre est la meilleure façon de protéger la lumière.</h3>
+            <h4>Un ethical hacker doit comprendre les méthodes des attaquants (l’ombre) pour pouvoir sécuriser et protéger les systèmes (la lumière). 
+                On ne protège pas efficacement ce que l’on ne connaît pas.<br><br>
+                En cybersécurité, la connaissance des failles est une force, pas une menace 🔐✨</h4>
+        </div>
+
+        <div class="image-circle">
+            <div class="orbit"></div>
+            <img src="images.jpg" alt="H4CH3UR 37H1QU3">
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p class="footer-terminal"><span class="cmd-icon">>_</span> system.status: <span class="accent-green">secured</span></p>
+                <p class="copyright">&copy; 2026 AM | Designed for the Digital Light</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/ton-profil" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://github.com/ton-github" target="_blank" class="social-link">GitHub</a>
+                <a href="mailto:bidossessimerveille@gmail.com" class="social-link">Email</a>
+            </div>
+
+            <div class="footer-quote">
+                <p>"La sécurité est un processus, pas un produit."</p>
+            </div>
+        </div>
+        <div class="footer-bottom-line"></div>
+    </footer>
+
+    <script>
+        const menu = document.querySelector('#mobile-menu');
+        const nav = document.querySelector('#nav-menu');
+
+        menu.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

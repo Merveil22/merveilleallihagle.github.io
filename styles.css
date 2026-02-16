@@ -267,50 +267,218 @@ footer {
     box-shadow: 0 0 5px var(--accent-cyan);
 }
 
-/* Style Mobile (Media Query) */
+/* ==========================================
+   STYLE MOBILE (MEDIA QUERY 768px)
+   ========================================== */
 @media (max-width: 768px) {
-    /* On s'assure que les infos restent visibles */
+    /* 1. HEADER : ON GARDE LES INFOS VISIBLES */
     .header-left .infos {
-        display: block; /* On force l'affichage */
+        display: block; 
         margin-left: 10px;
     }
 
-    /* On réduit la taille pour que ça ne pousse pas le bouton burger hors de l'écran */
     .header-left h3 {
-        font-size: 0.8rem; /* Texte plus petit sur mobile */
-        white-space: nowrap; /* Empêche le nom de passer à la ligne */
+        font-size: 0.85rem;
+        white-space: nowrap;
     }
 
     .header-left .pseudo {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
         display: block;
     }
 
-    /* Ajustement de l'alignement du header */
     .principal {
         justify-content: space-between;
         padding: 0 10px;
     }
-    /* Le conteneur principal du menu mobile */
+
+    /* 2. MENU MOBILE PLEIN ÉCRAN */
+    .menu-toggle {
+        display: flex;
+        z-index: 1001;
+        position: relative;
+    }
+
     nav {
         position: fixed;
         top: 0;
-        right: -100%; /* Cache le menu complètement à droite */
+        right: -100%;
         width: 100%;
-        height: 100vh; /* Prend toute la hauteur de l'écran */
-        background: rgba(8, 10, 15, 0.98); /* Fond sombre opaque */
-        backdrop-filter: blur(15px); /* Effet de flou sur le reste du site */
+        height: 100vh;
+        background: rgba(8, 10, 15, 0.98);
+        backdrop-filter: blur(15px);
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Centre les liens verticalement */
+        justify-content: center;
         align-items: center;
         transition: 0.4s ease-in-out;
-        z-index: 999; /* Juste en dessous du bouton burger */
+        z-index: 1000;
     }
 
-    /* Quand le menu est activé via JS */
     nav.active {
-        right: 0; /* Fait glisser le menu sur tout l'écran */
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .btn-nav {
+        font-size: 1.3rem;
+        width: 80%;
+        padding: 15px;
+        background: none;
+        border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+    }
+
+    /* 3. ABOUT & GRILLES SUR MOBILE */
+    .about-grid, .values-list {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-hero {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .profil {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .statuts {
+        display: none; /* On cache le "Online" pour gagner de la place */
+    }
+}
+
+/* ANIMATION BURGER (Hors media query pour être accessible partout) */
+.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+
+/* ==========================================
+   SECTION ABOUT (DESIGN GÉNÉRAL)
+   ========================================== */
+.about-section {
+    padding: 80px 10%;
+    background: rgba(0, 242, 255, 0.01);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-cyan);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* MISE EN FACE : CARTE & PHOTO */
+.about-hero {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.card-main {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-line {
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 242, 255, 0.05);
+    padding-bottom: 4px;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 242, 255, 0.1);
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    border-color: var(--accent-cyan);
+    transform: translateY(-5px);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+.about-card h3 {
+    color: var(--accent-green);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.profil {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profil img {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+    border: 2px solid var(--accent-cyan);
+    object-fit: cover;
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.3);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* VALEURS */
+.values-container {
+    text-align: center;
+    background: rgba(10, 15, 20, 0.6);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(57, 255, 20, 0.1);
+}
+
+.values-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.value-item {
+    flex: 1;
+    padding: 20px;
+}
+
+/* ==========================================
+   STYLE MOBILE (MEDIA QUERY)
+   ========================================== */
+@media (max-width: 768px) {
+    .about-hero {
+        flex-direction: column !important;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav.active {
+        right: 0;
     }
 
     nav ul {
@@ -321,7 +489,7 @@ footer {
     }
 
     .btn-nav {
-        font-size: 1.5rem; /* On agrandit les liens pour faciliter le clic au doigt */
+        font-size: 1.5rem;
         background: none;
         border: none;
         border-bottom: 1px solid rgba(0, 242, 255, 0.2);
@@ -329,25 +497,22 @@ footer {
         padding: 15px;
     }
 
-    /* S'assurer que le bouton burger reste au-dessus du menu noir */
     .menu-toggle {
         display: flex;
         z-index: 1000; 
         position: relative;
     }
     
-    /* On cache les infos du header sur mobile pour libérer de l'espace */
+    /* On force l'affichage du nom ici */
     .header-left .infos {
-        display: none;
+        display: block !important;
     }
 }
 
-
-    /* Animation du burger en "X" quand il est actif */
-    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
-}
+/* ANIMATION BURGER (S'applique quand la classe .active est ajoutée par JS) */
+.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 /* --- SECTION ABOUT --- */
 .about-section {
     padding: 80px 10%;
